@@ -7,11 +7,21 @@ const path = require("path");
 
 module.exports = {
   devServer: {
-    hot: true,
-    open: false,
-    port: 7006,
-    compress: true,
-    contentBase: path.join(__dirname, "../public"),
+    hot: true, // 热更新
+    open: false, // 默认打开窗口
+    port: 7006, // 端口
+    compress: true, // 压缩
+    contentBase: path.join(__dirname, "../dev-server"), // 默认文件位置
+    clientLogLevel: "warning",
+    // historyApiFallback: {
+    //   rewrites: [
+    //     {
+    //       from: /.*/,
+    //       to: path.posix.join(__dirname, "../dist/index.html"),
+    //     },
+    //   ],
+    // },
+    historyApiFallback: true,
     // proxy: {
     //   // proxy URLs to backend development server
     //   "/api": "http://localhost:3000",

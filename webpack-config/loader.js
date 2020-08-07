@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/, // 匹配js文件
+        test: /\.(js|jsx)$/, // 匹配js、jsx文件
         exclude: /node_modules/,
         use: "Happypack/loader?id=js",
         // loader: "babel-loader",
