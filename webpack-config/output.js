@@ -7,7 +7,8 @@ const path = require("path");
 
 module.exports = {
   output: {
-    path: path.join(__dirname, '../dev-server'),
+    path: path.join(__dirname, '../build'),
     filename: "bundle.js",
+    // publicPath: '/outputdist/', // 地址添加前缀
   },
 };

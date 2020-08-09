@@ -1,11 +1,9 @@
 import React from "react";
-import ReactDOM from 'react-dom';
-import RooterContainer from './RooterContainer'
+import ReactDOM from "react-dom";
+import AntdContainer from "./AntdContainer";
 class App extends React.Component {
   render() {
-    return (
-      <RooterContainer />
-    );
+    return <AntdContainer />;
   }
 }
 

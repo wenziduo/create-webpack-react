@@ -11,8 +11,10 @@ module.exports = {
     open: false, // 默认打开窗口
     port: 7006, // 端口
     compress: true, // 压缩
-    contentBase: path.join(__dirname, "../dev-server"), // 默认文件位置
+    // publicPath: '/aaa/', // dev 添加前缀
+    contentBase: path.join(__dirname, "../dev-server"), // 默认本地服务器所在的根目录
     clientLogLevel: "warning",
+    quiet: true, // 控制台log
     // historyApiFallback: {
     //   rewrites: [
     //     {
@@ -22,6 +24,13 @@ module.exports = {
     //   ],
     // },
     historyApiFallback: true,
+    overlay: { // 编译器错误或警告时，在浏览器中显示全屏覆盖
+      warnings: true,
+      errors: true
+    },
+    // headers: { // 请求的响应头
+    //   'X-Custom-Foo': 'bar'
+    // }
     // proxy: {
     //   // proxy URLs to backend development server
     //   "/api": "http://localhost:3000",
