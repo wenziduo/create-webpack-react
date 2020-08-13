@@ -3,7 +3,7 @@ import RouterContainer from './RouterContainer'
 import { ConfigProvider } from "antd";
 import zhCN from "antd/es/locale/zh_CN";
 
-const AntdContainer = ({ children }) => {
+const AntdContainer = () => {
   return (
     <ConfigProvider locale={zhCN}>
       <div className="App"><RouterContainer /></div>

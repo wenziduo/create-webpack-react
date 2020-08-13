@@ -3,27 +3,18 @@
  * @author wenduo
  */
 
+const path = require("path");
+
 module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // 匹配js、jsx文件
+        test: /\.(js|jsx|ts|tsx)$/, // 匹配js、jsx、ts、tsx文件
         exclude: /node_modules/,
-        use: "Happypack/loader?id=js",
-        // loader: "babel-loader",
-        // query: {
-        //   // plugins: ["transform-runtime"],
-        //   // presets: ["es2015", "react", "stage-2"],
-        //   presets: ["@babel/preset-env"],
-        // },
+        use: "Happypack/loader?id=js&ts",
       },
       {
         test: /\.css$/, // 匹配css文件
-        use: "Happypack/loader?id=css",
-        // loader: "style-loader!css-loader",
-      },
-      {
-        test: /\.less$/, // 匹配less文件
         use: "Happypack/loader?id=css",
       },
     ],

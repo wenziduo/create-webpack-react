@@ -19,7 +19,7 @@ module.exports = {
     }),
     // js声明多线程打包
     new Happypack({
-      id: "js",
+      id: "js&ts",
       use: [
         {
           loader: "babel-loader",
