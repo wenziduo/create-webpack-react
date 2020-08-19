@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AntdContainer from "./AntdContainer";
+import AntdContainer from "@/AntdContainer";
 import "./app.less";
 class App extends React.Component {
   render() {

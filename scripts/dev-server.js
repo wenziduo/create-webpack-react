@@ -53,5 +53,5 @@ app.use(webpackHotMiddleware(complier));
 app.use(express.static(DIST_DIR));
 
 app.listen(PORT, function () {
-  console.log(colors.blue("成功启动：localhost:" + PORT));
+  console.log("project is running at " + colors.blue("http://localhost:" + PORT));
 });

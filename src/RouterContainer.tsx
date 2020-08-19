@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from './pages/login';
-import Layout from './layout';
-import { routerData } from './router/router';
+import Login from '@/pages/login';
+import Layout from '@/layout';
+import { routerData } from '@/router/router';
 
 const RooterContainer = () => {
   return (
