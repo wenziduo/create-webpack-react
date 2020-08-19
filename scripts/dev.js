@@ -3,20 +3,19 @@ const express = require("express");
 const webpack = require("webpack");
 
 const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackConfig = require("./webpack-config");
+const webpackConfig = require("../webpack-config");
 
 const app = express(),
   DIST_DIR = path.join(__dirname, "dist"), // 设置静态访问文件路径
-  PORT = 9090, // 设置启动端口
+  PORT = 7006, // 设置启动端口
   complier = webpack(webpackConfig);
 
 app.use(
   webpackDevMiddleware(complier, {
-    // 这里是对 webpackDevMiddleware 的一些配置，具体其他配置我们下面已经列出来了。
-
-    //绑定中间件的公共路径,与webpack配置的路径相同
-    publicPath: '/',
-    quiet: true, //向控制台显示任何内容
+    ...webpackConfig.devServer,
+    proxy: {
+      "/api": "http://localhost:3000",
+    }
   })
 );
 

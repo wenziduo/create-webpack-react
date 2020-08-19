@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './pages/login';
-import Layout from './layout/index';
+import Layout from './layout';
 import { routerData } from './router/router';
 
 const RooterContainer = () => {

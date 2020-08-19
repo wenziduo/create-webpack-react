@@ -7,6 +7,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    entry: path.join(__dirname, "../src/app.js"),
+    entry: ["webpack-hot-middleware/client?noInfo=true&reload=true", path.join(__dirname, "../src/app.js")],
+    // entry: path.join(__dirname, "../src/app.js"),
   },
 };

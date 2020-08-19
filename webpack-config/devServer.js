@@ -9,7 +9,8 @@ module.exports = {
   devServer: {
     hot: true, // 热更新
     open: false, // 默认打开窗口
-    port: 7006, // 端口
+    host: '0.0.0.0',
+    // port: devConfig.port, // 端口
     compress: true, // 压缩
     // publicPath: '/aaa/', // dev 添加前缀
     contentBase: path.join(__dirname, "../dev-server"), // 默认本地服务器所在的根目录
@@ -28,6 +29,7 @@ module.exports = {
       warnings: true,
       errors: true
     },
+    // proxy: devConfig.proxy,
     // headers: { // 请求的响应头
     //   'X-Custom-Foo': 'bar'
     // }

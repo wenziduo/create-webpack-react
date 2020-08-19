@@ -8,6 +8,6 @@ module.exports = {
   output: require("./output").output,
   module: require("./loader").module,
   plugins: require("./plugins").plugins,
-  devServer: require("./server").devServer,
+  // devServer: require("./devServer").devServer,
   resolve: require("./resolve").resolve,
 };
