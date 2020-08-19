@@ -8,6 +8,7 @@ module.exports = {
   output: require("./output").output,
   module: require("./loader").module,
   plugins: require("./plugins").plugins,
+  mode: require("./mode").mode,
   // devServer: require("./devServer").devServer,
   resolve: require("./resolve").resolve,
 };
