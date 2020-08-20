@@ -3,13 +3,13 @@
  * @author wenduo
  */
 
-const path = require("path");
+const { srcPath } = require("./commonPath");
 
 module.exports = {
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
-      "@": path.join(__dirname, "../src"), // 这样@符号就表示项目根目录中src这一层路径
+      "@": srcPath, // 这样@符号就表示项目根目录中src这一层路径
     },
   },
 };

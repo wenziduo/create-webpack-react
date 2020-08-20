@@ -3,11 +3,11 @@
  * @author wenduo
  */
 
-const path = require("path");
+const { indexJS } = require("./commonPath");
 
 module.exports = {
   entry: {
-    entry: ["webpack-hot-middleware/client?noInfo=true&reload=true", path.join(__dirname, "../src/app.js")],
+    entry: ["webpack-hot-middleware/client?noInfo=true&reload=true", indexJS],
     // entry: path.join(__dirname, "../src/app.js"),
   },
 };

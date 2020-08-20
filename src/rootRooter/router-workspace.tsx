@@ -1,6 +1,7 @@
 import React from "react";
 import AboutPage from "@/pages/about";
-export default [
+import { currentRouterProps } from "./router.d";
+const routers: currentRouterProps[] = [
   {
     title: "关于",
     path: "/about",
@@ -8,3 +9,4 @@ export default [
     component: () => <AboutPage />,
   },
 ];
+export default routers;

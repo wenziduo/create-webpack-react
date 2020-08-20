@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production --config ./webpack-config/index.js",
+    "build": "set NODE_ENV=production&&webpack --config ./webpack-config/index.js",
     "dev": "set NODE_ENV=dev&&node scripts/dev-server.js",
     "test": "set NODE_ENV=test&&node scripts/dev-server.js"
   },

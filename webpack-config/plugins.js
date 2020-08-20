@@ -9,12 +9,13 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HappyPack = require("happypack"); // 导入多线程打包
 const happyThreadPool = HappyPack.ThreadPool({ size: osSize }); // 创建一个 HappyThreadPool，作为所有 loader 共用的线程池
+const { indexHTML } = require("./commonPath");
 
 module.exports = {
   plugins: [
     // html 插件
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "../public/index.html"),
+      template: indexHTML,
     }),
     // js声明多线程打包
     // new HappyPack({

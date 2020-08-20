@@ -3,12 +3,12 @@
  * @author wenduo
  */
 
-const path = require("path");
+const { publicPath, distPath } = require("./commonPath");
 
 module.exports = {
   output: {
-    path: path.join(__dirname, '../build'),
+    path: distPath,
     filename: "bundle.js",
-    // publicPath: '/outputdist/', // 地址添加前缀
+    publicPath: publicPath, // 地址添加前缀
   },
 };

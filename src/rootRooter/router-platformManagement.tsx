@@ -1,6 +1,7 @@
 import React from "react";
 import ListPage from "@/pages/list";
-export default [
+import { currentRouterProps } from "./router.d";
+const routers: currentRouterProps[] = [
   {
     title: "列表",
     path: "/list",
@@ -8,3 +9,4 @@ export default [
     component: () => <ListPage />,
   },
 ];
+export default routers;
