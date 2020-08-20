@@ -18,6 +18,7 @@ if (devConfig.proxy) {
   app.use(
     createProxyMiddleware(devConfig.proxy.from, {
       target: devConfig.proxy.to,
+      secure: devConfig.proxy.secure,
       changeOrigin: devConfig.proxy.changeOrigin,
       pathRewrite: devConfig.proxy.pathRewrite,
     })

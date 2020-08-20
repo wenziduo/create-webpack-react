@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Spin, Button } from "@/antdComponent";
+import globalService from '@/model/service'
+import './index.less';
 
 export default function LayoutComponent({ children }: { children: any }) {
   console.log("children", children);
@@ -14,23 +16,24 @@ export default function LayoutComponent({ children }: { children: any }) {
   //   })
   // }
   useEffect(() => {
-    console.log("start");
-    window.addEventListener("hashchange", (ev) => {
-      console.log("hashchange", ev);
-    });
-    window.addEventListener(
-      "load",
-      (ev) => {
-        console.log("load", ev);
-      },
-      false
-    );
+    globalService.getUserInfo()
+    // console.log("start");
+    // window.addEventListener("hashchange", (ev) => {
+    //   console.log("hashchange", ev);
+    // });
+    // window.addEventListener(
+    //   "load",
+    //   (ev) => {
+    //     console.log("load", ev);
+    //   },
+    //   false
+    // );
   }, []);
   return (
-    <div>
-      <Spin spinning={true}>
-        <Button type="default">123456789</Button>
-      </Spin>
+    <div
+      className="root-loading"
+    >
+      <Spin spinning={true} size="large" />
     </div>
   );
 }

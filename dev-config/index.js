@@ -25,10 +25,11 @@ module.exports = {
   webpackHotMiddleware: {},
   proxy: {
     from: "/api",
-    to: "http://127.0.0.1:3000",
+    to: "http://b2b-reconfiguration-test.weimeng-hosp.com",
+    secure: false,
     changeOrigin: true,
     pathRewrite: {
-      // '^/api/old-path': '/api/new-path'
+      '^/api': '/',
     },
   },
 };
