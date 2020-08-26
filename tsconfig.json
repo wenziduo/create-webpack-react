@@ -26,8 +26,13 @@
       "@/*": ["src/*"]
     }
   },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": ["node_modules", "dist", "build", "mock"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "dist", "build", "mock"],
+  "rules": {
+    "globals": {
+      "NICE_FEATURE": true
+    },
+    "align": [true, "parameters", "statements", "NICE_FEATURE"]
+  },
+  "useWebpackText": true
 }

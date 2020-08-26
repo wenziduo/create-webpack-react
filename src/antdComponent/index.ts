@@ -1,9 +1,5 @@
-import Button from './button'
-import Layout from './layout'
-import Spin from './spin'
+import Button from './button';
+import Layout from './layout';
+import Spin from './spin';
 
-export {
-  Button,
-  Layout,
-  Spin,
-}
+export { Button, Layout, Spin };

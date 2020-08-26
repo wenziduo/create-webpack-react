@@ -46,21 +46,21 @@ module.exports = {
         },
       ],
     }),
-    new HappyPack({
-      id: "ts-pre",
-      threads: 4,
-      threadPool: happyThreadPool, // 用于检索工作线程的预定义线程池
-      verbose: true, // 启用此选项可将状态消息从HappyPack记录到STDOUT
-      loaders: [
-        {
-          options: {
-            // formatter: eslintFormatter,
-            eslintPath: require.resolve("tslint"),
-          },
-          loader: require.resolve("tslint-loader"),
-        },
-      ],
-    }),
+    // new HappyPack({
+    //   id: "ts-pre",
+    //   threads: 4,
+    //   threadPool: happyThreadPool, // 用于检索工作线程的预定义线程池
+    //   verbose: true, // 启用此选项可将状态消息从HappyPack记录到STDOUT
+    //   loaders: [
+    //     {
+    //       options: {
+    //         // formatter: eslintFormatter,
+    //         eslintPath: require.resolve("tslint"),
+    //       },
+    //       loader: require.resolve("tslint-loader"),
+    //     },
+    //   ],
+    // }),
     new HappyPack({
       id: "js",
       threads: 4,
@@ -87,7 +87,7 @@ module.exports = {
       threads: 4,
       threadPool: happyThreadPool, // 用于检索工作线程的预定义线程池
       verbose: true, // 启用此选项可将状态消息从HappyPack记录到STDOUT
-      loaders: [ 'style-loader', 'css-loader', 'less-loader' ]
+      loaders: ["style-loader", "css-loader", "less-loader"],
       // loaders: [
       //   // {
       //   //   loader: require.resolve("style-loader"),
@@ -135,6 +135,12 @@ module.exports = {
         },
       ],
     }),
+    new webpack.DefinePlugin({
+      NICE_FEATURE: JSON.stringify(true),
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    }),
+    new webpack.ProgressPlugin(), // 显示打包进度
     // new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(), // 启动HMR
     new webpack.NoEmitOnErrorsPlugin(), // 在编译出现错误时，使用 NoEmitOnErrorsPlugin 来跳过输出阶段。这样可以确保输出资源不会包含错误。

@@ -1,24 +1,28 @@
-import axios, { AxiosStatic, AxiosRequestConfig, AxiosInstance } from "axios";
-import qs from "qs";
+import axios, { AxiosRequestConfig, AxiosInstance } from 'axios';
+import qs from 'qs';
+console.log(
+  `current environment: %c${NICE_FEATURE}`,
+  'color: skyBlue; font-size: 17px;'
+);
 
 interface BaseRequestProps {
   get: (url: string, config: AxiosRequestConfig) => Promise<any>;
-  post: (url: string, data: any, config: AxiosRequestConfig) => void;
-  put: (url: string, data: any, config: AxiosRequestConfig) => void;
-  delete: (url: string, config: AxiosRequestConfig) => void;
+  post: (url: string, data: any, config: AxiosRequestConfig) => Promise<any>;
+  put: (url: string, data: any, config: AxiosRequestConfig) => Promise<any>;
+  delete: (url: string, config: AxiosRequestConfig) => Promise<any>;
 }
 
 class BaseRequest implements BaseRequestProps {
-  private $http: AxiosStatic;
+  private $http: AxiosInstance;
   private dataMethodDefaults: AxiosRequestConfig;
   constructor() {
-    this.$http = axios;
-    this.$http.create({
-      // baseURL: "/api/b2b",
+    this.$http = axios.create({
+      baseURL: '/api/b2b',
+      withCredentials: true // 允许携带cookie
     });
     this.dataMethodDefaults = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       transformRequest: [
         function (data) {

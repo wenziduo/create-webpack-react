@@ -5,7 +5,6 @@ import Layout from "@/layout";
 import { routerData } from "@/rootRooter/router";
 
 const RooterContainer = () => {
-  console.log("routerData", routerData);
   console.log(Object.keys(routerData))
   return (
     <Router>

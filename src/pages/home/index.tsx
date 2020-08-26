@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div>
       <span>首页页面567</span>
-      <Wenziduo666 textName="你好啊"/>
+      <Wenziduo666 textName="你好啊" />
     </div>
   );
 }

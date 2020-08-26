@@ -11,7 +11,6 @@ const devConfig = require("../dev-config");
 
 const app = express();
 const complier = webpack(webpackConfig);
-complier.apply(new webpack.ProgressPlugin()); // 显示打包的进度
 console.log(colors.blue("当前环境：" + process.env.NODE_ENV));
 // 配置proxy转发
 if (devConfig.proxy) {

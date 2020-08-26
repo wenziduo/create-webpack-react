@@ -5,10 +5,21 @@
 
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { srcPath } = require('./commonPath')
 
 module.exports = {
   module: {
     rules: [
+      // {
+      //   test: /\.(js|jsx|ts|tsx)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: srcPath,
+      //   exclude: /node_modules/,
+      //   options: {
+      //     fix: true
+      //   }
+      // },
       {
         test: /\.(js|jsx|ts|tsx)$/, // 匹配js、jsx、ts、tsx文件
         exclude: /node_modules/,
@@ -41,7 +52,7 @@ module.exports = {
       {
         test: /\.css$/, // 匹配css文件
         // use: [MiniCssExtractPlugin.loader, "happypack/loader?id=css"],
-        use: "happypack/loader?id=css"
+        use: "happypack/loader?id=css",
         // use: [
         //   // MiniCssExtractPlugin.loader,
         //   "style-loader",
