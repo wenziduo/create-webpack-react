@@ -5,13 +5,13 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 
 const AntdContainer = () => {
-  return (
-    <ConfigProvider locale={zhCN}>
-      <ReduxContainer>
-        <RouterContainer />
-      </ReduxContainer>
-    </ConfigProvider>
-  );
+	return (
+		<ConfigProvider locale={zhCN}>
+			<ReduxContainer>
+				<RouterContainer />
+			</ReduxContainer>
+		</ConfigProvider>
+	);
 };
 
 export default AntdContainer;

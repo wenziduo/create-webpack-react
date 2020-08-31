@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default function AboutPage() {
-  return (
-    <div>
-      <span>关于页面</span>
-    </div>
-  );
+	return (
+		<div>
+			<span>关于页面</span>
+		</div>
+	);
 }

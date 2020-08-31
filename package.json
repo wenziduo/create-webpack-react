@@ -7,7 +7,8 @@
     "build": "cross-env NODE_ENV=production webpack --config ./webpack-config/index.js",
     "dev": "cross-env NODE_ENV=dev node scripts/dev-server.js",
     "test": "cross-env NODE_ENV=test node scripts/dev-server.js",
-    "format": "onchange 'src/**/*.js' 'src/**/*.ts' 'src/**/*.tsx' -- prettier --write {{changed}}"
+    "format": "onchange 'src/**/*.js' 'src/**/*.ts' 'src/**/*.tsx' -- prettier --write {{changed}}",
+    "lint": "eslint --fix"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +34,7 @@
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-webpack": "^0.12.2",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
