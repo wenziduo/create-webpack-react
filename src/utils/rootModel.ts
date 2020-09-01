@@ -11,6 +11,7 @@ class InitProps {
 	reducers: any;
 }
 class rootModel extends InitProps {
+	namespace: string;
 	state: any;
 	rootEffects: any;
 	rootReducers: any;
@@ -35,6 +36,7 @@ class rootModel extends InitProps {
 			// };
 			rootReducers[`${namespace}/${ele}`] = reducers[ele];
 		});
+		this.namespace = namespace;
 		this.state = state;
 		this.rootEffects = rootEffects;
 		this.rootReducers = rootReducers;

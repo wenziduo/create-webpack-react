@@ -6,9 +6,6 @@ import './index.less';
 
 export default function LayoutComponent({ children }: { children: any }) {
 	const dispatch = useDispatch();
-	// const classifyOperateStore = useSelector(
-	//   state => state.page_classify_operate_reducer
-	// );
 	const _dispatch = (params) => {
 		return new Promise((resolve, reject) => {
 			dispatch({
@@ -22,10 +19,6 @@ export default function LayoutComponent({ children }: { children: any }) {
 	}, []);
 	const getUserInfo = async () => {
 		console.log('start res');
-		// const res: any = dispatch({
-		// 	type: 'globalModel/getUserInfo',
-		// 	payload: {},
-		// });
 		const res: any = await _dispatch({
 			type: 'globalModel/getUserInfo',
 			payload: {},

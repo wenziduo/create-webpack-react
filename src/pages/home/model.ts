@@ -2,7 +2,7 @@ import RootModal from '@/utils/rootModel';
 import globalService from './service';
 
 const model = {
-	namespace: 'globalModel',
+	namespace: 'page_home_index_modelodel',
 	state: {
 		userInfo: {},
 	},
@@ -33,6 +33,5 @@ const model = {
 		},
 	},
 };
-// const modelData = new RootModal(model);
-// console.log('modelData', modelData);
+
 export const { namespace, rootSaga, rootReducer } = new RootModal(model);
