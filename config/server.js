@@ -1,13 +1,12 @@
-const path = require('path');
 const express = require('express');
 const colors = require('colors');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackConfig = require('../webpack-config');
+const webpackConfig = require('./webpack/webpack-development');
 const historyApiFallback = require('connect-history-api-fallback');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const devConfig = require('../dev-config');
+const devConfig = require('../server.config');
 
 const app = express();
 const complier = webpack(webpackConfig);

@@ -108,9 +108,7 @@ module.exports = {
 			NODE_ENV: JSON.stringify(process.env.NODE_ENV),
 		}),
 	],
-	mode: {
-		mode: 'production',
-	},
+	mode: 'production',
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 		alias: {
