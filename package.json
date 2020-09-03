@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack-config/index.js",
-    "dev": "cross-env NODE_ENV=dev node scripts/dev-server.js",
-    "test": "cross-env NODE_ENV=test node scripts/dev-server.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack-production.js",
+    "dev": "cross-env NODE_ENV=dev node server.config.js",
+    "test": "cross-env NODE_ENV=test node server.config.js",
     "format": "onchange 'src/**/*.js' 'src/**/*.ts' 'src/**/*.tsx' -- prettier --write {{changed}}",
     "lint": "eslint --fix"
   },

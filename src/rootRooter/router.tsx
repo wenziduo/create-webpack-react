@@ -2,7 +2,6 @@ import React from 'react';
 import LayoutHome from '@/layout/layout-home';
 import LayoutWorkspace from '@/layout/layout-workspace';
 import LayoutPlatformManagement from '@/layout/layout-platformManagement';
-
 import routerHome from './router-home';
 import routerWorkspace from './router-workspace';
 import routerPlatformManagement from './router-platformManagement';

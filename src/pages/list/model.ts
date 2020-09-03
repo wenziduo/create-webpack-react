@@ -2,7 +2,7 @@ import RootModal from '@/utils/rootModel';
 import globalService from './service';
 
 const model = {
-	namespace: 'page_workspace_about_model',
+	namespace: 'page_platformManagement_list_model',
 	state: {
 		userInfo: {},
 	},
