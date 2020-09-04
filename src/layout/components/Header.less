@@ -1,0 +1,63 @@
+.layout-common-header.ant-layout-header {
+	height: 50px;
+	line-height: normal;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	// 左侧容器
+	.header-left-container {
+    // height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-basis: 250px;
+    flex-grow: 1;
+    flex-shrink: 1;
+		.header-logo {
+			height: 35px;
+			display: flex;
+			align-items: center;
+			img {
+				height: 100%;
+			}
+			span {
+				color: #fff;
+				margin-left: 5px;
+				font-size: 16px;
+			}
+		}
+	}
+	// 中间容器
+	.header-modules-container {
+		height: 100%;
+		.ant-menu.modules-container {
+      height: 100%;
+			.ant-menu-item {
+				background-color: rgba(0, 0, 0, 0);
+				border-bottom: 5px solid transparent;
+        height: 100%;
+        line-height: 45px;
+			}
+			.ant-menu-item-active {
+				background-color: rgba(0, 0, 0, 0);
+				box-sizing: border-box;
+				border-bottom: 5px solid orange;
+			}
+			.ant-menu-item-selected {
+				background-color: rgba(0, 0, 0, 0);
+				box-sizing: border-box;
+				border-bottom: 5px solid orange;
+			}
+			.ant-menu-item:hover {
+				background-color: rgba(0, 0, 0, 0);
+			}
+		}
+	}
+	// 右侧容器
+	.header-right-container {
+    height: 100%;
+    flex-basis: 250px;
+    flex-grow: 1;
+    flex-shrink: 1;
+	}
+}

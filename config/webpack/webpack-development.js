@@ -32,6 +32,10 @@ module.exports = {
 				test: /\.css$/, // 匹配css文件
 				use: 'happypack/loader?id=css',
 			},
+			{
+				test: /\.(png|jpg|gif|svg)$/, // 匹配图片文件
+				loader: 'file-loader',
+			},
 		],
 	},
 	plugins: [

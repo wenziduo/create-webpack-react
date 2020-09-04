@@ -25,7 +25,7 @@ module.exports = {
 	webpackHotMiddleware: {},
 	proxy: {
 		from: '/api',
-		to: 'http://b2b-reconfiguration-testa.weimeng-hosp.com',
+		to: 'http://b2b-reconfiguration-test.weimeng-hosp.com',
 		secure: false,
 		changeOrigin: true,
 		pathRewrite: {

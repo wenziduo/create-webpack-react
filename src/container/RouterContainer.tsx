@@ -9,7 +9,7 @@ const RooterContainer = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/" component={Layout} exact />
+				<Route path="/" component={Layout} />
 				<Route path="/login" component={Login} exact />
 				{Object.keys(routerData).map((keyName) => {
 					console.log('routerData', routerData);

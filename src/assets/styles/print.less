@@ -1,0 +1,38 @@
+@media print {
+   :global {
+    .print-hide {
+      display: none;
+    }
+    #printRoot {
+      color: #000;
+      h1, h2, h3, h4, h5, h6 {
+        color: rgba(0,0,0,1)
+      }
+      .delivery-title h2{
+        font-weight: bold;
+        font-size: 21px;
+      }
+      .ant-table-bordered .ant-table-thead , .ant-table-bordered .ant-table-body {
+        border: 1px solid #000 !important;
+        border-right: 0 !important;
+        border-bottom: 0 !important;
+      }
+      .ant-table-bordered .ant-table-thead > tr > th, .ant-table-bordered .ant-table-tbody > tr > td{
+        border-bottom: 1px solid #000 !important;
+        border-right: 1px solid #000 !important;
+       }
+       .ant-table{
+        color: #000 !important;
+        border-collapse: collapse;
+        .ant-table-thead > tr > th {
+          white-space: nowrap
+        }
+        .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+          padding: 5px ;
+        }
+        .table-head { page-break-inside:avoid; page-break-after:auto;}
+        .table-footer { page-break-inside:avoid; page-break-after:auto }
+      }
+    }
+   }
+}
