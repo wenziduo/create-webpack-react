@@ -7,13 +7,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HappyPack = require('happypack'); // 导入多线程打包
 const happyThreadPool = HappyPack.ThreadPool({ size: osSize }); // 创建一个 HappyThreadPool，作为所有 loader 共用的线程池
-const { indexHTML, srcPath, indexJS, distPath, publicPath } = require('./commonPath');
+const { indexHTML, srcPath, indexJS, distPath, publicPath } = require('../commonPath');
 
 module.exports = {
 	entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', indexJS],
 	output: {
 		path: distPath,
-		filename: 'bundle.js',
+		filename: '[name].[hash].js',
 		publicPath: publicPath, // 地址添加前缀
 	},
 	module: {

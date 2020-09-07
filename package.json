@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack-production.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack-production.js",
     "dev": "cross-env NODE_ENV=dev node config/server.js",
     "test": "cross-env NODE_ENV=test node config/server.js",
     "format": "onchange 'src/**/*.js' 'src/**/*.ts' 'src/**/*.tsx' -- prettier --write {{changed}}",

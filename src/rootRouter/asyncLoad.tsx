@@ -28,10 +28,10 @@ export const asyncLoad = ({ currentPagePath, currentModelPath }: InProps) => {
 	];
 	const CurrentLoadable = Loadable({
 		loader: () => {
-			return import(`@/pages/home${currentPagePath}`);
+			return import(`@/pages${currentPagePath}`);
 		},
 		loading: Loading,
-		delay: 1,
+		delay: 200,
 	});
 	return (
 		<DynamicModuleLoader modules={[CurrentModules]}>

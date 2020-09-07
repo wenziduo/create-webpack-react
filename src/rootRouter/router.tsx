@@ -1,11 +1,11 @@
 import React from 'react';
 import LayoutHome from '@/layout/layout-home';
 import LayoutWorkspace from '@/layout/layout-workspace';
-import LayoutPlatformManagement from '@/layout/layout-platformManagement';
+import LayoutPlatformManagement from '@/layout/layout-platform';
 import routerHome from './router-home';
 import routerWorkspace from './router-workspace';
-import routerPlatformManagement from './router-platformManagement';
-import { RouterDataProps } from './router.d';
+import routerPlatformManagement from './router-platform';
+import { RouterDataProps } from './router';
 
 export const routerData: RouterDataProps = {
 	home: {
@@ -19,7 +19,7 @@ export const routerData: RouterDataProps = {
 		routers: routerWorkspace,
 	},
 	platformManagement: {
-		path: '/platformManagement',
+		path: '/platform',
 		component: LayoutPlatformManagement,
 		routers: routerPlatformManagement,
 	},

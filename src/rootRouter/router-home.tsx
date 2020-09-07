@@ -1,12 +1,12 @@
 import React from 'react';
-import AboutPage from '@/pages/about';
-import { currentRouterProps } from './router.d';
+import { currentRouterProps } from './router';
 import { asyncLoad } from './asyncLoad';
+
 const routers: currentRouterProps[] = [
 	{
-		title: '关于',
-		path: '/about',
-		key: '/about',
+		title: '首页',
+		path: '/',
+		key: '/',
 		component: () =>
 			asyncLoad({
 				currentPagePath: '/home',
@@ -14,4 +14,6 @@ const routers: currentRouterProps[] = [
 			}),
 	},
 ];
+
+export const currrentModule = 'home';
 export default routers;

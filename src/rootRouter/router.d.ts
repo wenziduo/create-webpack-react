@@ -21,5 +21,11 @@ export type currentRouterProps = {
 	title: string;
 	path: string;
 	key: string;
+	breadcrumb?: BreadcrumbProps[];
 	component: () => React.ReactElement;
 };
+
+export interface BreadcrumbProps {
+	title: string;
+	path: string;
+}

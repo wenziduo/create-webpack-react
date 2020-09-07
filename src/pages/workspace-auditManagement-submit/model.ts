@@ -1,12 +1,11 @@
 import RootModal from '@/utils/rootModel';
 import globalService from './service';
-import { GlobalModelProps } from './model.d';
+
 const model = {
-	namespace: 'globalModel',
+	namespace: 'page_workspace_auditManagement_submit_model',
 	state: {
-		logged: false,
 		userInfo: {},
-	} as GlobalModelProps,
+	},
 	effects: {
 		*getUserInfo({ call, put }, { payload, resolve }) {
 			console.log('%csuccess', 'color: green;');
@@ -17,10 +16,6 @@ const model = {
 					payload: {
 						...res.data,
 					},
-				});
-				yield put({
-					type: 'globalModel/changeLogged',
-					payload: true,
 				});
 			}
 			resolve(res);
@@ -36,14 +31,7 @@ const model = {
 				},
 			};
 		},
-		changeLogged(state, { payload }) {
-			return {
-				...state,
-				logged: payload,
-			};
-		},
 	},
 };
-// const modelData = new RootModal(model);
-// console.log('modelData', modelData);
+
 export const { namespace, rootSaga, rootReducer } = new RootModal(model);

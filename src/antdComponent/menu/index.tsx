@@ -2,8 +2,9 @@ import React from 'react';
 import { Menu } from 'antd';
 import { InitProps } from './index.d';
 
-const AntdMenu = (props: InitProps) => {
-	return <Menu {...props}>{props.children}</Menu>;
-};
+// const AntdMenu = (props: InitProps) => {
+// 	return <Menu {...props}>{props.children}</Menu>;
+// };
 export const MenuItem = Menu.Item;
-export default AntdMenu;
+export const SubMenu = Menu.SubMenu;
+export default Menu;
