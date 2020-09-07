@@ -27,7 +27,7 @@ const TableComponent = () => {
 			dataSource={current.data}
 			columns={columns}
 			loading={current.tableLoading}
-			rowKey="_id"
+			rowKey="id"
 			size="small"
 			pagination={{
 				current: current.currentPage,

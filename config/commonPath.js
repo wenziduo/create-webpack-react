@@ -8,5 +8,5 @@ module.exports = {
 	indexHTML: path.join(__dirname, '..', 'templates', 'index.html'), // html 入口
 	indexJS: path.join(__dirname, '..', 'src', 'app.js'), // js 入口
 	favicon: path.join(__dirname, '..', 'templates', 'favicon.ico'), //icon
-	staticDir: path.join(__dirname, '..', 'static'), //静态资源
+	staticDir: path.join(__dirname, '..', 'static'), // 静态资源
 };

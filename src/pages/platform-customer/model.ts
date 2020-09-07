@@ -23,8 +23,23 @@ const model = {
 		tabsKey: 'myCustomer',
 	},
 	effects: {
-		*getCustormerList({ call, put }, { payload, resolve }) {
-			const res = yield call(globalService.getCustomerList, payload);
+		*getCustormerList({ call, put, select }, { payload, resolve }) {
+			const { myCustomer: { form, currentPage, pageSize } } = yield select(state => state.platformCustomer)
+			const params = {
+				...payload,
+				...form,
+				currentPage,
+				pageSize,
+			}
+			yield put({
+				type: 'platformCustomer/changeMyCustomer',
+				payload: { tableLoading: true },
+			});
+			const res = yield call(globalService.getCustomerList, params);
+			yield put({
+				type: 'platformCustomer/changeMyCustomer',
+				payload: { tableLoading: false },
+			});
 			if (res.success) {
 				yield put({
 					type: 'platformCustomer/changeMyCustomer',
@@ -39,7 +54,22 @@ const model = {
 			resolve(res);
 		},
 		*getApplyHistoryList({ call, put }, { payload, resolve }) {
+			const { applyHistory: { form, currentPage, pageSize } } = yield select(state => state.platformCustomer)
+			const params = {
+				...payload,
+				...form,
+				currentPage,
+				pageSize,
+			}
+			yield put({
+				type: 'platformCustomer/changeApplyHistory',
+				payload: { tableLoading: true },
+			});
 			const res = yield call(globalService.getApplyHistoryList, payload);
+			yield put({
+				type: 'platformCustomer/changeApplyHistory',
+				payload: { tableLoading: false },
+			});
 			if (res.success) {
 				yield put({
 					type: 'platformCustomer/changeApplyHistory',

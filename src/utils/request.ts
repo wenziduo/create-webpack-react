@@ -12,6 +12,26 @@ interface BaseRequestProps {
 class BaseRequest implements BaseRequestProps {
 	private $http: AxiosInstance;
 	private dataMethodDefaults: AxiosRequestConfig;
+	private cancelTokens = [];
+	// 取消相同的多次请求
+	private cancel = ({ method, url, data }) => {
+		const urlToken = `${method}-${url}-${qs.stringify(data)}`;
+		const currIndex = this.cancelTokens.findIndex((ele) => ele.urlToken === urlToken);
+		const curr = this.cancelTokens.find((ele) => ele.urlToken === urlToken);
+		if (curr) {
+			this.cancelTokens.splice(currIndex, 1);
+			curr.cancel('Operation canceled');
+		}
+		const CancelToken = axios.CancelToken;
+		const source = CancelToken.source();
+		this.cancelTokens.push({
+			urlToken,
+			cancel: source.cancel,
+		});
+		return {
+			token: source.token,
+		};
+	};
 	constructor() {
 		this.$http = axios.create({
 			baseURL: '/api/b2b',
@@ -51,14 +71,33 @@ class BaseRequest implements BaseRequestProps {
 			},
 		);
 	}
-
 	get(url, data = {}) {
-		return this.$http.get(url, { data });
+		const { token } = this.cancel({
+			method: 'get',
+			url,
+			data,
+		});
+		return this.$http
+			.get(url, {
+				data,
+				cancelToken: token,
+			})
+			.catch((thrown) => {
+				if (axios.isCancel(thrown)) {
+					console.log('Request canceled', thrown.message);
+				}
+			});
 	}
 
-	post(url, data = undefined) {
+	post(url, data = {}) {
+		const { token } = this.cancel({
+			method: 'post',
+			url,
+			data,
+		});
 		return this.$http.post(url, data, {
 			...this.dataMethodDefaults,
+			cancelToken: token,
 		});
 	}
 

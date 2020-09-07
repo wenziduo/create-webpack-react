@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HappyPack = require('happypack'); // 导入多线程打包
 const happyThreadPool = HappyPack.ThreadPool({ size: osSize }); // 创建一个 HappyThreadPool，作为所有 loader 共用的线程池
 const { indexHTML, srcPath, indexJS, distPath, publicPath } = require('../commonPath');
+const antdTheme = require('../antd-theme'); // antd 风格配置
 
 module.exports = {
 	entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', indexJS],
@@ -72,7 +73,7 @@ module.exports = {
 				{
 					loader: require.resolve('babel-loader'),
 					options: {
-						plugins: [],
+						plugins: [['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }]],
 						compact: true,
 					},
 				},
@@ -102,6 +103,7 @@ module.exports = {
 					options: {
 						lessOptions: {
 							javascriptEnabled: true,
+							modifyVars: antdTheme,
 						},
 					},
 				},
