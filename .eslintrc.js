@@ -17,6 +17,7 @@ module.exports = {
 		'prettier/@typescript-eslint',
 		'plugin:prettier/recommended',
 		'plugin:import/typescript',
+		'plugin:react-hooks/recommended',
 	],
 	// installedESLint: true,
 	parserOptions: {
@@ -33,7 +34,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	parser: '@typescript-eslint/parser',
-	plugins: ['react', '@typescript-eslint', 'prettier'],
+	plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
 	settings: {
 		react: {
 			pragma: 'React',
@@ -90,6 +91,8 @@ module.exports = {
 		quotes: [1, 'single'], //引号类型 `` "" ''
 		semi: ['error', 'always'], // 语句强制分号结尾
 		'space-before-function-paren': [1, 'always'], //函数定义时括号前面要不要有空格
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn',
 	},
 	globals: {
 		NICE_FEATURE: true,

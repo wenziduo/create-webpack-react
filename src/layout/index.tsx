@@ -9,7 +9,7 @@ function LayoutComponent({ children }: InitLayoutProps) {
 	return (
 		<Layout>
 			<Header />
-			<Layout>{children}</Layout>
+			<Layout>{children && children}</Layout>
 		</Layout>
 	);
 }
@@ -17,7 +17,10 @@ function LayoutComponent({ children }: InitLayoutProps) {
 const RootLayout: React.ComponentElement = (props) => {
 	const globalState = useSelector((state) => state.globalModel);
 	const dispatch = useDispatch();
+	console.log('props', props);
+	const { location, history } = props;
 	console.log('location', location);
+	console.log('history', history);
 	const _dispatch = (params) => {
 		return new Promise((resolve, reject) => {
 			dispatch({
@@ -35,6 +38,7 @@ const RootLayout: React.ComponentElement = (props) => {
 			type: 'globalModel/getUserInfo',
 			payload: {},
 		});
+		console.log('res', res);
 		if (res.success) {
 			// 跳转至首页
 			if (location.pathname === '/') {
@@ -43,6 +47,7 @@ const RootLayout: React.ComponentElement = (props) => {
 		}
 	};
 	const { logged } = globalState;
+	console.log('logged', logged);
 	return logged ? <LayoutComponent {...props} /> : <Spin spinning={true} />;
 };
 

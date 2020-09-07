@@ -9,7 +9,6 @@ const model = {
 	} as GlobalModelProps,
 	effects: {
 		*getUserInfo({ call, put }, { payload, resolve }) {
-			console.log('%csuccess', 'color: green;');
 			const res = yield call(globalService.getUserInfo, payload);
 			if (res.success) {
 				yield put({
@@ -44,6 +43,5 @@ const model = {
 		},
 	},
 };
-// const modelData = new RootModal(model);
-// console.log('modelData', modelData);
+
 export const { namespace, rootSaga, rootReducer } = new RootModal(model);

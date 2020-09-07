@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Input, Row, Col, Form } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncDispatch } from '@/utils/index';
@@ -6,9 +6,12 @@ const SearchComponent = () => {
 	const [form] = Form.useForm();
 	const dispatch = useDispatch();
 	const { myCustomer } = useSelector((state) => state.platformCustomer);
+	
+	const [a, changeAd] = useState('aaa');
 	useEffect(() => {
 		getlist();
-	}, []);
+		console.log(a);
+	}, [a]);
 	const getlist = async () => {
 		const res: any = await asyncDispatch(
 			dispatch,

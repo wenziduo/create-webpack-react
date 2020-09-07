@@ -15,8 +15,9 @@ module.exports = {
 	entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', indexJS],
 	output: {
 		path: distPath,
-		filename: 'bundle.js',
 		publicPath: publicPath, // 地址添加前缀
+		filename: '[name][hash:8].js',
+		chunkFilename: '[name][chunkhash:8].js',
 	},
 	module: {
 		rules: [

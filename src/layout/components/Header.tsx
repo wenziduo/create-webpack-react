@@ -26,7 +26,7 @@ const HeaderComponent = () => {
 			? ['workspace']
 			: location.pathname.indexOf('/platform') === 0
 			? ['platform']
-			: null;
+			: ['home'];
 	return (
 		<Header className="layout-common-header">
 			<div className="header-left-container">
