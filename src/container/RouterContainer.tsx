@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '@/pages/login';
 import Layout from '@/layout';
 import { routerData } from '@/rootRouter/router';
 
@@ -9,7 +8,6 @@ const RooterContainer = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/login" component={Login} exact />
 				<Route
 					path="/"
 					component={(props) => (

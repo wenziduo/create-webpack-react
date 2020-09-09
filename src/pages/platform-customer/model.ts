@@ -1,11 +1,14 @@
 import RootModal from '@/utils/rootModel';
 import globalService from './service';
-
+export const initValues = {};
 const model = {
 	namespace: 'platformCustomer',
 	state: {
 		myCustomer: {
-			form: {},
+			searchState: {
+				keyOpen: false,
+				values: initValues,
+			},
 			currentPage: 1,
 			pageSize: 10,
 			total: 0,
@@ -24,13 +27,15 @@ const model = {
 	},
 	effects: {
 		*getCustormerList({ call, put, select }, { payload, resolve }) {
-			const { myCustomer: { form, currentPage, pageSize } } = yield select(state => state.platformCustomer)
+			const {
+				myCustomer: { form, currentPage, pageSize },
+			} = yield select((state) => state.platformCustomer);
 			const params = {
 				...payload,
 				...form,
 				currentPage,
 				pageSize,
-			}
+			};
 			yield put({
 				type: 'platformCustomer/changeMyCustomer',
 				payload: { tableLoading: true },
@@ -53,19 +58,21 @@ const model = {
 			}
 			resolve(res);
 		},
-		*getApplyHistoryList({ call, put }, { payload, resolve }) {
-			const { applyHistory: { form, currentPage, pageSize } } = yield select(state => state.platformCustomer)
+		*getApplyHistoryList({ call, put, select }, { payload, resolve }) {
+			const {
+				applyHistory: { form, currentPage, pageSize },
+			} = yield select((state) => state.platformCustomer);
 			const params = {
 				...payload,
 				...form,
 				currentPage,
 				pageSize,
-			}
+			};
 			yield put({
 				type: 'platformCustomer/changeApplyHistory',
 				payload: { tableLoading: true },
 			});
-			const res = yield call(globalService.getApplyHistoryList, payload);
+			const res = yield call(globalService.getApplyHistoryList, params);
 			yield put({
 				type: 'platformCustomer/changeApplyHistory',
 				payload: { tableLoading: false },

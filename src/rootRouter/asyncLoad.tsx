@@ -3,12 +3,9 @@ import Loadable from 'react-loadable';
 import { Spin } from '@/antdComponent';
 import { DynamicModuleLoader } from 'redux-dynamic-modules';
 
-class Loading extends React.Component {
-	render() {
-		return <Spin spinning={true} />;
-	}
-}
-
+const MyConpponent = ({ error }) => {
+	return error ? <center style={{ color: 'orangered' }}>组件加载失败！</center> : <Spin spinning={true} />;
+};
 interface InProps {
 	currentPagePath: string;
 	currentModelPath: string;
@@ -30,8 +27,7 @@ export const asyncLoad = ({ currentPagePath, currentModelPath }: InProps) => {
 		loader: () => {
 			return import(`@/pages${currentPagePath}`);
 		},
-		loading: Loading,
-		delay: 200,
+		loading: MyConpponent,
 	});
 	return (
 		<DynamicModuleLoader modules={[CurrentModules]}>

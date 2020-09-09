@@ -15,9 +15,9 @@ const presets = [
 	'@babel/preset-typescript',
 ];
 const plugins = [
-	['@babel/plugin-proposal-decorators', { legacy: true }],
-	['@babel/plugin-proposal-class-properties', { loose: true }],
 	['@babel/plugin-syntax-dynamic-import', { loose: true }],
 	['@babel/plugin-transform-runtime', { loose: true }],
+	['@babel/plugin-proposal-decorators', { legacy: true }],
+	['@babel/plugin-proposal-class-properties', { loose: true }],
 ];
 module.exports = { presets, plugins };

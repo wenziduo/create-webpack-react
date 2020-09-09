@@ -42,15 +42,16 @@ module.exports = {
 		},
 		'import/resolver': {
 			webpack: {
-				config: './webpack-config/index.js', // 指定webpack配置文件路径
+				config: './config/webpack/webpack-development.js',
 			},
 			alias: {
-				map: [['@', './src']],
+				map: [['@', './src/*']],
 				extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
 			},
 		},
 	},
 	rules: {
+		'import/no-unresolved': 0,
 		'prettier/prettier': [
 			'error',
 			{
